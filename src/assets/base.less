@@ -1,0 +1,127 @@
+@import '../../node_modules/antd/dist/antd.css';
+
+@bgcolor: #efefef;
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: "微软雅黑";
+    background: @bgcolor;
+}
+.app {
+    height: 100vh;
+}
+
+header {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
+    background: #e5e5e5;
+}
+
+.app-middle-content{
+    flex: 1;
+    background: blueviolet;
+    display: flex;
+}
+
+footer {
+    height: 70px;
+    background: #16e538;
+    text-align: center;
+    line-height: 70px;
+    color: #111;
+}
+.header-right {
+    width: 300px;
+    height: 100%;
+    //background: antiquewhite;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.header-left {
+    width: 300px;
+    height: 100%;
+    //background: antiquewhite;
+    display: flex;
+    align-items: center;
+}
+.header-right-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    //background: aqua;
+}
+.header-right-username {
+    height: 64px;
+    margin-left: 14px;
+    line-height: 64px;
+    font-weight: 600;
+    //background: burlywood;
+    a {
+        display: block;
+        height: 64px;
+        color: #575656;
+    }
+    a:hover {
+        color: cornflowerblue;
+    }
+}
+.header-left-logo {
+    width: 48px;
+    height: 48px;
+    //background: pink;
+    margin-right: 14px;
+}
+.header-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-right: 12px;
+}
+.header-left-title {
+    height: 64px;
+    line-height: 64px;
+    font-size: 24px;
+    font-weight: 600;
+    //background: burlywood;
+}
+
+// 侧边栏
+.slider-content {
+    width: 256px;
+    height: 100%;
+    //height: calc(100vh - 134px);
+    background: #64edd8;
+}
+
+// 内容
+.container {
+    width: calc(100vw - 256px);
+    height: 100%;
+    padding: 12px;
+    background: pink;
+    display: flex;
+    flex-direction: column;
+    .container-content {
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        background: blueviolet;
+        .container-content-box {
+            height: 100%;
+            width: 100%;
+            background: #d9b948;
+        }
+    }
+}
+
+// 面包屑
+.ant-breadcrumb {
+    margin-bottom: 12px;
+    background: coral;
+}

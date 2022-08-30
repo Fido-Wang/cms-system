@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Router from './router'
-import './assets/base.css'
+import './assets/base.less'
 
 
 ReactDOM.render(
