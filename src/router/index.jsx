@@ -6,6 +6,7 @@
 * */
 import App from '../App'
 import List from '../pages/List'
+import List2 from '../pages/List2'
 import Edit from '../pages/Edit'
 import Means from '../pages/Means'
 import Login from '../pages/Login'
@@ -17,6 +18,7 @@ const BaseRouter = ()=> (
         <Routes>
             <Route path='/' element={<App/>}>
                 <Route path='list' element={<List/>}></Route>
+                <Route path='list2' element={<List2/>}></Route>
                 <Route path='edit' element={<Edit/>}></Route>
                 <Route path='means' element={<Means/>}></Route>
 

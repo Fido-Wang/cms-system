@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { DeleteFilled, EditFilled, DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import './index.less'
 import moment from 'moment'
 import { Table, Space, Tag, Button, Tooltip } from 'antd';
 import { getArticleList } from './api'
@@ -10,7 +11,7 @@ const { Column, ColumnGroup } = Table;
 function TableTitle(props) {
     return (
         <div>
-            <p>{ props.title }</p>
+            <h2 style={{ color: '#111',}}>{ props.title }</h2>
             <p>{ props.subTitle }</p>
         </div>
     )
@@ -29,7 +30,7 @@ function List() {
     // ]
     const [ tableData, setTableData ] = useState([])
     // const [ total , setTotal ] = useState(0)
-    const [pagination, setPagination] = useState({current: 1, pageSize: 2, total: 10})
+    const [pagination, setPagination] = useState({current: 1, pageSize: 5, total: 10})
 
     // 封装请求列表得函数
     const getTableData = (current, pageSize)=> {
@@ -38,7 +39,7 @@ function List() {
             count: pageSize
         }
         getArticleList(paramsData).then(res=> {
-            if(res.errCode ==0) {
+            if(res.errCode ===0) {
                 const { count, num, total } = res.data
                 setPagination({ current: num, pageSize: count, total: total })
                 let titleArr = []
@@ -46,6 +47,7 @@ function List() {
                     let obj =  {
                         key: item.id,
                         date: moment(item.date).format('YYYY-MM-DD hh:mm:ss'),
+                        author: item.author,
                         tableTitle: <TableTitle title={item.title} subTitle={item.subTitle}/>
                     }
                     titleArr.push(obj)
@@ -57,10 +59,7 @@ function List() {
     // 分页的函数
     const pageChange= (pagination)=> {
         console.log('pagination', pagination.current, pagination.pageSize )
-        // setPagination({
-        //     current: pagination.current,
-        //     pageSize: pagination.pageSize
-        // })
+        // 每次分页切换 查询当前的分页数据
         getTableData(pagination.current, pagination.pageSize )
     }
     useEffect(()=> {

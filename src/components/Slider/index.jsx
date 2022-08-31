@@ -36,6 +36,7 @@ function Slider () {
             mode="inline"
         >
             <Menu.Item key='list'><AppstoreOutlined/>查看文章列表</Menu.Item>
+            <Menu.Item key='list2'><AppstoreOutlined/>查看文章列表2</Menu.Item>
             <Menu.Item key='edit'><MailOutlined/>文章编辑</Menu.Item>
             <Menu.Item key='means'><SettingOutlined/>修改资料</Menu.Item>
         </Menu>
