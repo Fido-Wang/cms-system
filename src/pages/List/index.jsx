@@ -3,9 +3,9 @@ import { DeleteFilled, EditFilled, DeleteOutlined, EditOutlined } from '@ant-des
 import './index.less'
 import moment from 'moment'
 import { Table, Space, Tag, Button, Tooltip } from 'antd';
-import { getArticleList } from './api'
-import log from "tailwindcss/lib/util/log";
-const { Column, ColumnGroup } = Table;
+import { getArticleList, updateArticleById,removeArticle } from './api'
+// import log from "tailwindcss/lib/util/log";
+// const { Column, ColumnGroup } = Table;
 
 // 表格标题组件
 function TableTitle(props) {
@@ -31,6 +31,8 @@ function List() {
     const [ tableData, setTableData ] = useState([])
     // const [ total , setTotal ] = useState(0)
     const [pagination, setPagination] = useState({current: 1, pageSize: 5, total: 10})
+
+    const [ curArticle, setCurArticle ] = useState({ id: '',title: '', subTitle: '', content: ''})
 
     // 封装请求列表得函数
     const getTableData = (current, pageSize)=> {
@@ -67,9 +69,13 @@ function List() {
     }, [])
     function deleteArt(id) {
         console.log('删除',id)
+        removeArticle(id).then(res=> {
+            console.log('remove article', res.data)
+        })
     }
     function editArt(id) {
         console.log('编辑',id)
+
     }
     const columns = [
         {

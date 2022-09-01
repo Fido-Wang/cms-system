@@ -18,21 +18,21 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 14px;
-    background: #e5e5e5;
+    background: #858585;
 }
 
 .app-middle-content{
-    flex: 1;
-    background: blueviolet;
+    height: calc(100vh - 134px);
+    //background: blueviolet;
     display: flex;
 }
 
 footer {
     height: 70px;
-    background: #16e538;
+    background: #dbdada;
     text-align: center;
     line-height: 70px;
-    color: #111;
+    color: #fff;
 }
 .header-right {
     width: 300px;
@@ -88,41 +88,32 @@ footer {
     line-height: 64px;
     font-size: 24px;
     font-weight: 600;
-    //background: burlywood;
 }
 
 // 侧边栏
 .slider-content {
     width: 256px;
     height: 100%;
-    //height: calc(100vh - 134px);
     background: #64edd8;
 }
 
 // 内容
 .container {
     width: calc(100vw - 256px);
-    height: 100%;
+    //height: 100%;
     padding: 12px;
-    background: pink;
-    display: flex;
-    flex-direction: column;
+    background: #e9e8e6;
     .container-content {
-        width: 100%;
-        height: 100%;
-        flex: 1;
-        background: blueviolet;
-        .container-content-box {
-            height: 100%;
-            width: 100%;
-            background: #d9b948;
-        }
+        background: #fff;
+        overflow: auto;
+        height: calc(100vh - 200px);
     }
 }
 
 // 面包屑
 .ant-breadcrumb {
+    height: 24px;
     margin-bottom: 12px;
-    background: coral;
+    //background: coral;
 }
 

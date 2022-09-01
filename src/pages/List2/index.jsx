@@ -79,7 +79,7 @@ export default function List2() {
                 )}
             />
             <Pagination
-                style={{ float: 'right', marginRight: '18px' }}
+                style={{ float: 'right', margin: '18px' }}
                 onChange={ onShowSizeChange }
                 pageSize={ pagination.pageSize }
                 current={pagination.current}
